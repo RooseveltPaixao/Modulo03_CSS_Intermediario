@@ -1,0 +1,25 @@
+.container{
+    background:black;
+    color:chartreuse;
+    width: 350px;
+    height: 200px;
+    overflow: /*scroll*/auto;
+    /*overflow-y:scroll*/
+}
+/*
+Perceba que desse jeito o texto sai fora da caixa, porém eu posso controlar isso com o overflow;
+overflow tem alguns valores:
+1º visible - padrão;
+
+2ºhidden - esconde todo o contéudo fora do container;
+
+3º scroll - vai gerar um scroll (aquele negocio que desce e sobe a página), porém ele vai criar um scrol tanto pra direita quanto pra esquerda memso não precisando; nesse caso o interessante é um overflow AUTO
+
+4º auto - gera um scroll só onde precisa;
+
+OBS.: dentro do overflow eu posso limitar se é overflow-y ou overflow-x; assim cada uma das propriedades ficariam restritas a esses eixos;
+
+
+
+
+*/

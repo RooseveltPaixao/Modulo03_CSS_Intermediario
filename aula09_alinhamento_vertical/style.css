@@ -1,0 +1,51 @@
+.card{
+    width: 400px;
+    height: 200px;
+    border: 5px solid green;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+/*
+Usando o text-aling:center; foi possível centralizar o texto na HORIZONTAL;
+agora pra centralizar ele na Vertical eu posso usar o line-heigth:tamanhodoelementoMÃE;
+Porém assim eu sempre precisaria saber altura da DIV mãe e isso é RUIM.
+
+P/ isso eu posso usar o position:absolute; assim posso determinar a posição a esquerda/direita/etc
+
+Porém ao fazer isso a minha referência fica um pouco distorcida e pra corrigir isso eu uso uma propriedade chamada transform. Esse transform pode receber funções translateX(); e translateY(); porém como eu quero modificar as duas  ao mesmo tempo , pois meu texto desalinhou horizontalmente támbem, por causa do position:absolute; eu uso transform:translate(posiçãoX,posiçãoy), pois quando usamos o translateY e X ao mesmo tempo só funciona o que foi digitado primeiro;
+
+OBS.: no translateYouX usamos o - pois a referência é o proprio eixo, é 50% do proprio elemente, assim o eixo fica assim:
+Elelemnto____________
+|
+|
+|
+|
+|
+
+Logo o positivo desce;
+
+*/
+
+.c1{
+    line-height: 200px;
+}
+.c2{
+    position: absolute;
+    top:50%;
+    right: 50%;
+    /*transform: translateY(-50%);*/
+    /*transform:translateX(50%);*/
+    transform: translate(50%,-50%);
+}
+/* Lembrando que posso usar o padding pra fazer isso mas fica difícil quantificar o tamanho do nosso card certinho porque o padding leva em conta o tamanho da nossa letra, então mesmo usando 100px de topo e 100px pra baixo ficaria maior que 200px*/
+.card2{
+    float:left;
+    /*display:inline-block;*/ /* eu poderia  usar o display inline-block caso não tivesse usado float nos outros, assim NÃO É lEGAL FICA MISTURANDO ou usa um ou outro*/
+    clear:left; /* isso é p/ não colar a imagem na horizontal, SE RETIRAR vai perceber como usando o PADDING é mais difícil de controlar o tamanho do card*/
+    padding-left: 180px;
+    padding-right: 180px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border: 5px solid green;
+}

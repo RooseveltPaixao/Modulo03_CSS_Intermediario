@@ -1,0 +1,76 @@
+/*Vamos usar o float que permite que um elemento fique flutuando ao lado de outro elemento*/
+
+.img1{
+    float: left;
+}
+.img2{
+    float:right;
+}
+/* 
+Pa mim retirar o elemento do flot eu posso lipar o texto do lado que eu quiser
+*/
+
+.p1{
+    clear:left; /*o both faz com que limpe dos dois lados */
+}
+/*
+Ao inserir uma div que contenha uma imagem e um texto e a imagem que é maior que o texto, a borda da imagem vai passar da borda da DIV
+
+*/
+
+.img3{
+    float: left;
+    border: 2px solid black;
+}
+
+.bloc{
+    border: 2px solid black;
+}
+
+/*para resolver isso podemos usar overflow:auto; assim tudo vai ficar automaticamente dentro DIV*/
+.bloc1{
+    overflow: auto;
+    border: 2px solid black;
+    background-color: cadetblue;
+}
+.img4{
+    float:left;
+}
+
+/* tambem se eu inserir várias imagens elas ficam uma do lado da outra linhadas*/
+
+.bloc2{
+    overflow: auto;
+    border: 2px solid black;
+    background-color: chartreuse;
+}
+.img5{
+    float: left;
+}
+
+/* Com essa função do float dá pra criar botões legais*/
+
+
+ul{
+    list-style: none;
+}
+
+/*use o float na li coloque o float a esquerda ou a direita*/
+li{
+    float:left;
+    overflow: auto;
+    padding: 10px;
+    margin: 5px;
+    background-color: black;
+    color:chartreuse;
+    border-radius: 8px;
+    border: 2px solid gold;
+    overflow: hidden;
+}
+
+a:hover{
+    background: pink;
+    color:red;
+    border-radius: 8px;
+    font-size: 20px;
+}

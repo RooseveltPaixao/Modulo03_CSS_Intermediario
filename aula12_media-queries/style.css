@@ -1,0 +1,61 @@
+.head{
+    overflow: hidden;
+    margin:auto;
+    width: 80%;
+    background-color: #1a4e0d;
+    padding:20px;
+    font-size: 18px;
+}
+.menu{
+    float:right;
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+li{
+    float: left;
+    color:white;
+    margin-left: 15px;
+}
+.logo{
+    float: left;
+    color:white;
+}
+/* Note no inspencionar que dependendo do aparelho celular isso deixa de ser responsivo, além disso se eu acrescentar alguns iténs a lista também vai ter esse problema
+Para corrigir isso vou usar o @media screen(porque quero pra tela, se não dizer pode entender que é pra impressora) and (max-width: 400px) - com  isso definimos que até no máximo 400pix vai executar esse css que já digitamos e a partir de 400px vai começar a exibir um novo css que vou digitar
+
+
+OBS.: Posso ter mais de um, ou seja, vários css com parametros diferentes dentro de outro css
+Só que a ORDEM de preferência e de cima pra baixo, ou seja, cuidado com a INDETAÇÃO
+*/
+@media screen and (max-width:700px){
+    .head{
+        background-color: grey;
+    }
+}
+
+@media screen and (max-width:500px){
+    .head{
+        background-color: white;
+        border: 5px solid black;
+    }
+    .logo{
+        float: none;
+        text-align: center;
+        color:tomato;
+   
+    }
+    .menu{
+        float: none;
+        text-align: center;
+        margin-top: 20px;
+   
+    }
+    li{
+        float: none;
+        text-align: center;
+        margin-bottom: 5px;
+        padding:10px;
+        background-color: yellowgreen;
+    }
+}

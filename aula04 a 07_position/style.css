@@ -1,0 +1,145 @@
+.square{
+    width: 100px;
+    height: 100px;
+    /*display: inline-block*/;
+}
+.square-red{
+    background-color: red;
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+    /*
+    se usasse a margin ele estaria na mesma posição, só que moveria tbm os demais objetos
+    */
+}
+.square-blue{
+    background-color: blue;
+    position: static;
+}
+.square-green{
+    background-color: green;
+    position: relative;
+    left: 400px;
+    top:100px;
+}
+.quadro{
+    width: 500px;
+    height: 400px;
+    border: 2px solid black;
+}
+
+/*
+Inicialmente temos um quadrado a baixo do outro, isso porque a tag div é um bloco que preenche toda a largura da tela fazendo com que o proximo elemento venha abaixo; porém da pra mudar isso.
+Se eu mudar o display do square pra inline-bock vai alinha tudo um do lado do outro. OBS.: vai reparar que fica um espaço entre os quadrados é porque vc colcou espaço entre suas div e como agr o HTML está lendo como texto ele acha que o espaço das DIV são espaços no texto;
+
+*/
+
+/*
+Pra definirmos a posição do meu elemento eu uso o Position: static - que é o padrão;
+Se eu quiser alterar isso uso o position: relative; ai posso alterar lef: 20px; por exemplo e right:20px;
+
+Assim meu objeto ira se deslocar essas distâncias. Note que é bem parecido com a Margin, porém a margin altera as posições dos outros elementos, pois ela gera como se fosse uma coisa ali; já o position não ele só movimenta e inclusive pode sobrepor outros elementos;
+
+Agora pra fazer o square-verde colar nas bordas do quadro (elemento-mãe) precisamos subtrair as diferenças. Assim:
+Quadro - 500px de largura
+square-verde - 100px
+pra ele colar na borda falta 400px pra direita(left);
+Quadro - 400px de altura
+square-ver - 100px + 100px do square-red +100px do square-blue = 300px
+logo precisa de 100 px pra baixo (top);
+
+*/
+
+.square1{
+    width: 100px;
+    height: 100px;
+}
+.square1-red{
+    background-color: red;
+    position: relative;
+}
+.square1-blue{
+    background-color: blue;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.square1-green{
+    background-color: green;
+}
+.quadro1{
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+    position:relative;
+}
+
+/*
+Perceba que no outro jeito acima ao mudar o tamanho do quadro mãe o quadrado não acompanha o posicionamento de canto desejado, logo pra ele acompanhar, ou seja, ao mudar o quadro mãe o posicionamentopermanece o mesmo temos que usar o abosute. Porém ao adicionar isso no quadrado azul o quadrado verde abaixo some. Isso ocorre porque o quadrado azul está acima do quadrado verde que agora ocupa a antiga posição do azul, a gente meio que retira o quadrado azul e quando adicionamos um posicionamento ao quadrado azul ele se descola e possibilita a gente ver o quadrado verde.
+
+Com o posicionamento absoluto é como se estivessemos dando coordenadas. Então ele usa a body como referência, logo se a body aumenta a coordenada aumenta na mesma proporção mantendo ele na mesma posição. Só que isso é um problema pois não quero que o quadrado tenha como referência a body, mas sim o quadro mãe. Para isso preciso retirar o posicionamento estático do quadrado mãe, assim o quadrado azul vai entender que é para se deslcoar em relação ao quadrado mãe e não a body.
+
+E assim ao colocar o quadrado azul com 0px da esquerda e 0px pra baixo ele cola no eixo 0 do plano cartesiano, e mesmo aumentando o tamanho do plano ele permanece na localização 0,0.
+
+BASICAMENTE a diferença entre o absolute e esse é que esse o eixo (0,0) é colocado na base do body ou do quadro mãe que eu determinar e no outro o eixo (0,0) é onde vc colocou ele originalmente isso pode ser (50px,30px) ou sei la, tanto faz.
+
+
+*/
+
+
+.square2{
+    width: 100px;
+    height: 100px;
+}
+.square2-red{
+    background-color: red;
+    position: relative;
+}
+.square2-blue{
+    background-color: blue;
+    position: fixed;
+    bottom:100px;
+    right: 500px;
+}
+.square2-green{
+    background-color: green;
+}
+.quadro2{
+    width: 500px;
+    height: 400px;
+    border: 2px solid black;
+    position: relative;
+}
+
+/*
+No posicionamento fixo temos algo extremamente parecido com o absoluto, porém a Origem do Cartesiano é a ViewPort. Assim, mesmo alterando o posicionamento do quadrado mãe de estatico pra relativo a Origem do Cartesiano continua sendo a ViewPort. Assim, por exemplo. mesmo que eu crie uma página bem grande e tals ao fazer a rolagem o quadrado irá permacener na mesma posição em relação ao que ue vejo (ViewPort).Tipo aqueles balõezinhos que ficam no canto inferior direito da página pra gente se comunicar. Mesmo que role a página ele permanece fixo;
+
+*/
+
+.square3{
+    width: 100px;
+    height: 100px;
+}
+.square3-red{
+    background-color: red;
+    position: relative;
+}
+.square3-blue{
+    background-color: blue;
+    position: sticky;
+    left: 600px;
+    bottom: 0px;
+    top:0px;
+}
+.square3-green{
+    background-color: green;
+}
+.quadro3{
+    width: 500px;
+    height: 800px;
+    border: 2px solid black;
+}
+
+/*
+Nese tipo "Grudendo" o elemento continua sendo uma referência pros demais, ou seja, ele não faz com que outro elemento suma. Porém você consegue dar a ele uma coordenada em relação a TAG DIV, assim ele fica restrito ao tamanho dela, e mesmo rolando a página ele vai ficar preso na TAG DIV. Interessante nortar que mesmo dando coordenadas que ultrapassem a TAG DIV ele não irá sair dela, irá grudar na posição ao extremo dentro da TAG DIV.
+*/

@@ -1,0 +1,36 @@
+/*
+Propriedade IMPORTANTE - Display: responsável por dizer como as coisas vão ficar distribuidas na tela;
+Geralmente cada tag já vem com um display setado como padrão
+Propriedades mais usadas do display: 
+1ªnone - retira o espaço do elemento e o elemento da tela;
+    OBS.: o atributo display:none tem caracteristicas parecidas com o visibility:hidden; porém o visibility retira a imagem da tela, mas preserva o espaço que ela ocupava ali;
+
+2ª inline - é uma linha - nesse tipo não tem como alterar a largura (widrh) e a altura (height) elas são automaticas;
+
+3ª block - deixa as coisas em forma de bloco. Nessa propriedade podemos alterar a altura e a largura de como vai ser exibido, assim posso fazer que um texto em block vá só até a metade da tela com uma width=50%, por exemplo.
+
+4ª inline-block-nesse tipo ele mantem tudo na mesma linha porém vc consegue escolher a widthbe a height desejada;
+
+Note que quando temos uma div dentro da outra o texto fica cortado assim:
+
+ <div>Essta é uma DIV Normal</div>
+    <div>
+        E aqui temos uma<div> Div dentro de outra</div> continua.
+    </div>
+    <div>
+
+No Chrome:
+
+Essta é uma DIV Normal
+E aqui temos uma
+Div dentro de outra
+continua.
+
+
+OBS.: por isso não posso usar um elemento tipo block dentro de um paragrafo se não ele vai quebrar;
+
+
+*/
+img{
+    visibility: hidden;
+}
